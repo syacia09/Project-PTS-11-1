@@ -1,9 +1,9 @@
 const express = require("express");
-const exphbs = require("express-handlebars");
+const { engine } = require("express-handlebars"); // Ubah ini
 const app = express();
 
-// Set Handlebars as the default templating engine
-app.engine("hbs", exphbs({ extname: "hbs" }));
+// Set Handlebars sebagai templating engine
+app.engine("hbs", engine({ extname: "hbs" })); // Gunakan engine dari express-handlebars
 app.set("view engine", "hbs");
 app.set("views", "./views");
 
